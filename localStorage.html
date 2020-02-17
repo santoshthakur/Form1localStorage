@@ -1,0 +1,413 @@
+<!Doctype HTML>
+<html lang="">
+<head>
+<title></title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" crossorigin="anonymous">
+<style>
+body{
+background:#ccc;
+}
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+body{
+display:flex;
+flex-direction:column;
+
+}
+
+.ulli{
+			display: flex; 
+            justify-content: center;
+			flex-direction:column;
+			background:#fff;
+			align-items: center;
+			padding-bottom:30px;
+			
+}
+.inptex{
+width:100%;
+padding:5px;
+border:1px solid #ccc;
+display:block;
+}
+form{
+display:block;
+}
+
+.wrap-sec{
+
+display:flex;
+flex-wrap:wrap;
+border:1px solid;
+
+}
+.secdiv{
+flex:0 0 auto;
+width:50%;
+max-width:50%;
+position:relative;
+}
+.clrbox{
+  background-image: linear-gradient(to left, red , yellow);
+  
+}
+.wclr{
+background:#fff;
+background-image: linear-gradient(45deg, white, gray);
+
+}
+.content-box{
+display:flex;
+justify-content:center;
+flex-direction:column;
+padding:25px;
+
+
+}
+.basicinfo{
+}
+.style-control-input {
+    position: absolute;
+    left: 0;
+    z-index: -1;
+    width: 1rem;
+    height: 1.25rem;
+    opacity: 0;
+}
+.style-control-label {
+    position: relative;
+    margin-bottom: 0;
+    vertical-align: top;
+}
+
+.style-radio .style-control-label::before {
+    border-radius: 50%;
+}
+.style-control-label::before {
+    position: absolute;
+    top: .25rem;
+    left: -1.5rem;
+    display: block;
+    width: 1rem;
+    height: 1rem;
+    pointer-events: none;
+    content: "";
+    background-color: #fff;
+    border: #adb5bd solid 1px;
+}
+.style-control-label::after {
+    position: absolute;
+    top: .25rem;
+    left: -1.5rem;
+    display: block;
+    width: 1rem;
+    height: 1rem;
+    content: "";
+    background: no-repeat 50%/50% 50%;
+	}
+.style-control-input:checked~.style-control-label::before {
+    color: #fff;
+    border-color: #007bff;
+    background-color: #007bff;
+}
+.style-radio .style-control-label::before {
+    border-radius: 50%;
+}
+.style-radio .style-control-input:checked~.style-control-label::after {
+	    border: 4px solid #ccc;
+    border-radius: 50%;
+}
+.style-control-label::after {
+    position: absolute;
+    top: .25rem;
+    left: -1.5rem;
+    display: block;
+    width: 1rem;
+    height: 1rem;
+    content: "";
+}
+.style-control {
+    position: relative;
+    display: inline-block;
+    min-height: 1.5rem;
+    padding-left: 1.5rem;
+}
+.style-checkbox .style-control-label::before {
+    border-radius: .25rem;
+}
+
+.style-checkbox .style-control-input:checked~.style-control-label::after{
+	border: solid #fff;
+    border-width: 0 2px 2px 0;
+    display: inline-block;
+    padding: 2px 2px 2px 2px;
+    width: 6px;
+    height: 11px;
+    transform: rotate(45deg);
+    margin-left: 4px;
+
+}
+
+/*.style-control-input:not(:disabled):active~.style-control-label::before {
+    color: #fff;
+    background-color: #b3d7ff;
+    border-color: #b3d7ff;
+}*/
+.btn-pos{position:absolute;bottom:0;right:0;height:50px;width:100%;text-align:right;}
+.divshadow{width:200px;height:100px;background-image:linear-gradient(90deg, rgba(255, 255, 255, 0), rgba(255, 0, 0, 0.8));position:absolute;bottom:0px;right:0;z-index:1}
+.lin1{
+height:100%;
+width:1px;
+background-image:linear-gradient(rgba(255, 255, 0, 0.5),rgba(255, 255, 255, 0));
+position:absolute;
+z-index:1;
+left:20%;
+}
+.lin2{
+height:100%;
+width:1px;
+background-image:linear-gradient(rgba(255, 0, 0, 0.8),rgba(255, 255, 255, 0));
+position:absolute;
+z-index:1;
+left:40%;}
+.lin3{
+height:100%;
+width:1px;
+background-image:linear-gradient(rgba(255, 0, 0, 0.8),rgba(255, 255, 255, 0));
+position:absolute;
+left:60%;
+z-index:1;
+}
+.lin4{
+height:100%;
+width:1px;
+background-image:linear-gradient(rgba(255, 0, 0, 0.8),rgba(255, 255, 255, 0));
+position:absolute;
+left:80%;
+z-index:1;
+}
+.errortext{
+position:absolute;
+top:70px;
+color:red;
+font-size:11px;
+font-weight:bold;
+display:none;
+}
+.form-group{
+position:relative;
+}
+.showerr{
+display:block;
+}
+</style>
+</head>
+<body>
+<section class="wrap-sec">
+<div class="secdiv clrbox">
+<div class="lin1"></div>
+<div class="lin2"></div>
+<div class="lin3"></div>
+<div class="lin4"></div>
+https://codepen.io/DGRFDSGN/pen/YWgWNV
+
+https://jtom.me/contact/
+
+https://chrisdermody.com/tag/animation/(Top header code)
+aaaa
+<div class="divshadow"></div>
+<div class="btn-pos">
+<Button class="btn btn-primary btn-lg">First Step</Button>
+<Button class="btn btn-primary btn-lg">Second Step</Button>
+</div>
+</div>
+<div class="secdiv wclr">
+<div class="content-box">
+<h1>Basic Information</h1>
+https://html.com/attributes/form-method/
+<form class="basicinfo" onsubmit="return validateForm()" action="#" method="post">
+<div class="form-group">
+<label>Name</label>
+<input type="text" name="name" id="name" value="" onkeypress="keyPressValidation()"  class="form-control" />
+<div class="errortext">Please Enter your Name</div>
+</div>
+<div class="form-group">
+<label>Email</label>
+<input type="text" name="email" id="email" value="" onkeypress="keyPressValidation()" class="form-control" />
+<div class="errortext">Please Enter your Email</div>
+</div>
+<div class="form-row">
+    <div class="form-group col-md-6">
+      <label for="inputCity">City</label>
+      <input type="text" class="form-control" onkeypress="keyPressValidation()" id="inputCity">
+	  <div class="errortext">Please Enter your City</div>
+    </div>
+    <div class="form-group col-md-4">
+      <label for="inputState">State</label>
+      <input id="inputState" type="text" onkeypress="keyPressValidation()" class="form-control">
+        
+	  <div class="errortext">Please Enter state</div>
+    </div>
+    <div class="form-group col-md-2">
+      <label for="inputZip">Zip</label>
+      <input type="text" class="form-control" onkeypress="keyPressValidation()" id="inputZip">
+	  <div class="errortext">Please Enter your Zip</div>
+    </div>
+  </div>
+
+
+
+
+<div class="text-right"><input  class="btn btn-primary" id="save" type="submit" value=" Next "></div>
+
+</form>
+
+
+</div>
+</div>
+</section>
+
+<script  src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<script>
+
+function keyPressValidation(){
+//alert("dfgdhfh");
+var namev=$('#name');
+var emailv=$('#email');
+var city=$('#inputCity');
+var state=$('#inputState');
+var zip=$('#inputZip');
+	if(namev.val()!==""){
+		console.log("Name");
+		$('#name').next().removeClass('showerr');
+	}
+	if(emailv.val()!==""){
+		console.log("Email");
+	//alert("dgdgdggf");
+		$('#email').next().removeClass('showerr');
+	}
+	if(city.val()!==""){
+		console.log("City");
+		$('#inputCity').next().removeClass('showerr');
+	}
+}
+
+function validateForm(){
+var namev=$('#name');
+var emailv=$('#email');
+var city=$('#inputCity');
+var state=$('#inputState');
+var zip=$('#inputZip');
+
+
+	if(namev.val().trim()===""){
+	$('#name').next().addClass('showerr');
+		namev.focus();
+		return false;
+	}
+	else if(emailv.val().trim()===""){
+		$('#email').next().addClass('showerr');
+		emailv.focus();
+		return false;
+	}
+	else if(city.val().trim()===""){
+		$('#inputCity').next().addClass('showerr');
+		city.focus();
+		return false;
+	}
+	else if(state.val().trim()===""){
+		$('#inputState').next().addClass('showerr');
+		state.focus();
+		return false;
+	}
+	else if(zip.val().trim()===""){
+		$('#inputZip').next().addClass('showerr');
+		zip.focus();
+		return false;
+	}
+	
+return true;
+
+}
+</script>
+
+<script>
+$('#save').on('click', function(){
+var nameL=$('#name').val();
+var emailL=$('#email').val();
+var cityL=$('#inputCity').val();
+var stateL=$('#inputState').val();
+var zipL=$('#inputZip').val();
+var item = [];
+item.push(nameL,emailL,cityL,stateL,zipL);
+localStorage.setItem("saveData", JSON.stringify(item));
+
+/* save Data as Object
+var objdata= { "name": nameL, "Email": emailL, "City": cityL }
+localStorage.setItem("saveData", JSON.stringify(objdata));
+
+**/
+
+});
+
+
+/* Save all input data
+$('#save').on('click', function(){
+
+    $('input[type="text"]').each(function(){    
+        var id = $(this).attr('id');
+        var value = $(this).val();
+       localStorage.setItem(id, value);
+        
+    });   
+});
+
+*/
+
+
+/*
+const form = document.querySelector('form')
+const ul = document.querySelector('ul')
+const button = document.querySelector('button')
+const input = document.getElementById('item')
+let itemsArray = localStorage.getItem('items') ? JSON.parse(localStorage.getItem('items')) : []
+
+localStorage.setItem('items', JSON.stringify(itemsArray))
+const data = JSON.parse(localStorage.getItem('items'))
+
+const liMaker = (text) => {
+  const li = document.createElement('li')
+  li.textContent = text
+  ul.appendChild(li)
+}
+
+form.addEventListener('submit', function(e) {
+  e.preventDefault()
+
+  itemsArray.push(input.value)
+  localStorage.setItem('items', JSON.stringify(itemsArray))
+  liMaker(input.value)
+  input.value = ''
+})
+
+data.forEach(item => {
+  liMaker(item);
+
+})
+
+button.addEventListener('click', function() {
+  localStorage.clear()
+  while (ul.firstChild) {
+    ul.removeChild(ul.firstChild)
+  }
+})
+*/
+</script>
+</body>
+</html>
