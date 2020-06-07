@@ -265,7 +265,7 @@ display:block;
 <script>
 var namev=$('#name');
 var regx=/^[A-Za-z]+$/;
-var regzip=/^[0-9]{5}/;
+var regzip=/^[0-9]{6}$/;
 
 var regxe=/^([A-Za-z0-9\._])+\@([A-Za-z0-9\._])+$/;
 var emailv=$('#email');
@@ -316,7 +316,18 @@ $( "#basicinfo" ).submit(function( event ) {
         zip.focus();
         return false;
     }
+    else{
+        var name= namev.val();
+        var email= emailv.val();
+        var cityl= city.val();
+        var statel= state.val();
+        var zipl= zip.val();
+        var personDetail= {name:name,email:email,cityl:cityl,statel:statel,zipl:zipl}
+        localStorage.setItem("formData", JSON.stringify(personDetail));
 
+            alert(personDetail.name);
+        //alert(namev.val() + emailv.val() + city.val() + state.val() + zip.val())
+    }
 });
 
 </script>
