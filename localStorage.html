@@ -225,41 +225,35 @@ display:block;
 <div class="secdiv wclr">
 <div class="content-box">
 <h1>Basic Information</h1>
-<form class="basicinfo" onsubmit="return validateForm()" action="#" method="post">
-<div class="form-group">
-<label>Name</label>
-<input type="text" name="name" id="name" value="" onkeypress="keyPressValidation()"  class="form-control" />
-<div class="errortext">Please Enter your Name</div>
-</div>
-<div class="form-group">
-<label>Email</label>
-<input type="text" name="email" id="email" value="" onkeypress="keyPressValidation()" class="form-control" />
-<div class="errortext">Please Enter your Email</div>
-</div>
+<form class="basicinfo" id="basicinfo" action="javascript:alert( 'success!' );">
+    <div class="form-group">
+        <label>Name</label>
+        <input type="text" name="name" id="name" value="" class="form-control" />
+        <div class="errortext" id="nameError"></div>
+    </div>
+    <div class="form-group">
+        <label>Email</label>
+        <input type="text" name="email" id="email" value="" class="form-control" />
+        <div class="errortext" id="emailError">Please Enter your Email</div>
+    </div>
 <div class="form-row">
-    <div class="form-group col-md-6">
-      <label for="inputCity">City</label>
-      <input type="text" class="form-control" value="" onkeypress="keyPressValidation()" id="inputCity">
-	  <div class="errortext">Please Enter your City</div>
+    <div class="form-group col-md-5">
+        <label for="inputCity">City</label>
+        <input type="text" class="form-control" value="" id="inputCity">
+        <div class="errortext" id="cityError">Please Enter your City</div>
     </div>
     <div class="form-group col-md-4">
-      <label for="inputState">State</label>
-      <input id="inputState" type="text" value="" onkeypress="keyPressValidation()" class="form-control">
-        
-	  <div class="errortext">Please Enter state</div>
+        <label for="inputState">State</label>
+        <input id="inputState" type="text" value="" class="form-control">
+          <div class="errortext" id="stateError">Please Enter state</div>
     </div>
-    <div class="form-group col-md-2">
+    <div class="form-group col-md-3">
       <label for="inputZip">Zip</label>
-      <input type="text" class="form-control" value="" onkeypress="keyPressValidation()" id="inputZip">
-	  <div class="errortext">Please Enter your Zip</div>
+      <input type="text" class="form-control" value="" id="inputZip">
+	  <div class="errortext" id="zipError">Please Enter your Zip</div>
     </div>
   </div>
-
-
-
-
 <div class="text-right"><input  class="btn btn-primary" id="save" type="submit" value=" Next "></div>
-
 </form>
 
 
@@ -269,78 +263,69 @@ display:block;
 
 <script  src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 <script>
-
-function keyPressValidation(){
-//alert("dfgdhfh");
 var namev=$('#name');
+var regx=/^[A-Za-z]+$/;
+var regzip=/^[0-9]{5}/;
+
+var regxe=/^([A-Za-z0-9\._])+\@([A-Za-z0-9\._])+$/;
 var emailv=$('#email');
 var city=$('#inputCity');
 var state=$('#inputState');
 var zip=$('#inputZip');
-	if(namev.val()!==""){
-		console.log("Name");
-		$('#name').next().removeClass('showerr');
-	}
-	if(emailv.val()!==""){
-		console.log("Email");
-	//alert("dgdgdggf");
-		$('#email').next().removeClass('showerr');
-	}
-	if(city.val()!==""){
-		console.log("City");
-		$('#inputCity').next().removeClass('showerr');
-	}
-}
+$( "#basicinfo" ).submit(function( event ) {
+   event.preventDefault();
+   if(namev.val()==""){
+        //alert("Enter your Name")
+        $("#nameError").text('Enter your Name').show();
+        namev.focus();
+        return false;
+    }
+    else if(!regx.test(namev.val())){
+        //alert("Only alphabet are allow");
+        $("#nameError").text('Only alphabet are allow').show();
+        namev.focus();
+        return false;
+    }
+    else if(emailv.val()==""){
+        $("#emailError").text('Please Enter your email').show();
+        emailv.focus();
+        return false;
+    }
+    else if(!regxe.test(emailv.val())){
+        $("#emailError").text('Please Enter your email in correct formate').show();
+        emailv.focus();
+        return false;
+    }
+    else if(city.val()==="" ||!regx.test(city.val())){
+        $("#cityError").text('Please enter city name in alphabet').show();
+        city.focus();
+        return false;
+    }
+    else if(state.val()==="" ||!regx.test(state.val())){
+        $("#stateError").text('Please enter state name alphabet').show();
+        state.focus();
+        return false;
+    }
+    else if(zip.val()===""){
+        $("#zipError").text('Please enter zip code').show();
+        zip.focus();
+        return false;
+    }
+    else if(!regzip.test(zip.val())){
+        $("#zipError").text('Please enter zip code in numeric').show();
+        zip.focus();
+        return false;
+    }
 
-function validateForm(){
-var namev=$('#name');
-var emailv=$('#email');
-var city=$('#inputCity');
-var state=$('#inputState');
-var zip=$('#inputZip');
+});
 
-
-	if(namev.val().trim()===""){
-	$('#name').next().addClass('showerr');
-		namev.focus();
-		return false;
-	}
-	else if(emailv.val().trim()===""){
-		$('#email').next().addClass('showerr');
-		emailv.focus();
-		return false;
-	}
-	else if(city.val().trim()===""){
-		$('#inputCity').next().addClass('showerr');
-		city.focus();
-		return false;
-	}
-	else if(state.val().trim()===""){
-		$('#inputState').next().addClass('showerr');
-		state.focus();
-		return false;
-	}
-	else if(zip.val().trim()===""){
-		$('#inputZip').next().addClass('showerr');
-		zip.focus();
-		return false;
-	}
-	
-return true;
-
-}
 </script>
 
 <script>
-$('#save').on('click', function(){
-var nameL=$('#name').val();
-var emailL=$('#email').val();
-var cityL=$('#inputCity').val();
-var stateL=$('#inputState').val();
-var zipL=$('#inputZip').val();
+
 var item = [];
-item.push(nameL,emailL,cityL,stateL,zipL);
-localStorage.setItem("saveData", JSON.stringify(item));
+//item.push(nameL,emailL,cityL,stateL,zipL);
+//localStorage.setItem("saveData", JSON.stringify(item));
 
 /* save Data as Object
 var objdata= { "name": nameL, "Email": emailL, "City": cityL }
@@ -348,7 +333,6 @@ localStorage.setItem("saveData", JSON.stringify(objdata));
 
 **/
 
-});
 
 </script>
 </body>
