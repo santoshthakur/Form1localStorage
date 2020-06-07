@@ -7,205 +7,38 @@
 
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" crossorigin="anonymous">
 <style>
-body{
-background:#ccc;
-}
-html, body {
-  height: 100%;
-  margin: 0;
-}
-    
-body{
-display:flex;
-flex-direction:column;
-
-}
-
-.ulli{
-			display: flex; 
-            justify-content: center;
-			flex-direction:column;
-			background:#fff;
-			align-items: center;
-			padding-bottom:30px;
-	   		
-}
-.inptex{
-width:100%;
-padding:5px;
-border:1px solid #ccc;
-display:block;
-}
-form{
-display:block;
-}
-
-.wrap-sec{
-
-display:flex;
-flex-wrap:wrap;
-border:1px solid;
-
-}
-.secdiv{
-flex:0 0 auto;
-width:50%;
-max-width:50%;
-position:relative;
-}
-.clrbox{
-  background-image: linear-gradient(to left, red , yellow);
-  
-}
-.wclr{
-background:#fff;
-background-image: linear-gradient(45deg, white, gray);
-
-}
-.content-box{
-display:flex;
-justify-content:center;
-flex-direction:column;
-padding:25px;
-
-
-}
-.basicinfo{
-}
-.style-control-input {
-    position: absolute;
-    left: 0;
-    z-index: -1;
-    width: 1rem;
-    height: 1.25rem;
-    opacity: 0;
-}
-.style-control-label {
-    position: relative;
-    margin-bottom: 0;
-    vertical-align: top;
-}
-
-.style-radio .style-control-label::before {
-    border-radius: 50%;
-}
-.style-control-label::before {
-    position: absolute;
-    top: .25rem;
-    left: -1.5rem;
-    display: block;
-    width: 1rem;
-    height: 1rem;
-    pointer-events: none;
-    content: "";
-    background-color: #fff;
-    border: #adb5bd solid 1px;
-}
-.style-control-label::after {
-    position: absolute;
-    top: .25rem;
-    left: -1.5rem;
-    display: block;
-    width: 1rem;
-    height: 1rem;
-    content: "";
-    background: no-repeat 50%/50% 50%;
-	}
-.style-control-input:checked~.style-control-label::before {
-    color: #fff;
-    border-color: #007bff;
-    background-color: #007bff;
-}
-.style-radio .style-control-label::before {
-    border-radius: 50%;
-}
-.style-radio .style-control-input:checked~.style-control-label::after {
-	    border: 4px solid #ccc;
-    border-radius: 50%;
-}
-.style-control-label::after {
-    position: absolute;
-    top: .25rem;
-    left: -1.5rem;
-    display: block;
-    width: 1rem;
-    height: 1rem;
-    content: "";
-}
-.style-control {
-    position: relative;
-    display: inline-block;
-    min-height: 1.5rem;
-    padding-left: 1.5rem;
-}
-.style-checkbox .style-control-label::before {
-    border-radius: .25rem;
-}
-
-.style-checkbox .style-control-input:checked~.style-control-label::after{
-	border: solid #fff;
-    border-width: 0 2px 2px 0;
-    display: inline-block;
-    padding: 2px 2px 2px 2px;
-    width: 6px;
-    height: 11px;
-    transform: rotate(45deg);
-    margin-left: 4px;
-
-}
-
-/*.style-control-input:not(:disabled):active~.style-control-label::before {
-    color: #fff;
-    background-color: #b3d7ff;
-    border-color: #b3d7ff;
-}*/
+body{background:#ccc;}
+html, body {height: 100%;margin: 0;}    
+body{display:flex;flex-direction:column;}
+.ulli{display: flex;justify-content: center;flex-direction:column;background:#fff;align-items: center;padding-bottom:30px;}
+.inptex{width:100%;padding:5px;border:1px solid #ccc;display:block;}
+form{display:block;}
+.wrap-sec{display:flex;flex-wrap:wrap;border:1px solid;}
+.secdiv{flex:0 0 auto;width:50%;max-width:50%;position:relative;}
+.clrbox{background-image: linear-gradient(to left, red , yellow);}
+.wclr{background:#fff;background-image: linear-gradient(45deg, white, gray);}
+.content-box{display:flex;justify-content:center;flex-direction:column;padding:25px;}
+.style-control-input {position: absolute;left: 0;z-index: -1;width: 1rem;height: 1.25rem;opacity: 0;}
+.style-control-label {position: relative;margin-bottom: 0;vertical-align: top;}
+.style-radio .style-control-label::before {border-radius: 50%;}
+.style-control-label::before {position: absolute;top: .25rem;left: -1.5rem;display: block;width: 1rem; height: 1rem;pointer-events: none;content: "";background-color: #fff;border: #adb5bd solid 1px;}
+.style-control-label::after {position: absolute;top: .25rem;left: -1.5rem;display: block;width: 1rem;  height: 1rem;content: "";background: no-repeat 50%/50% 50%;}
+.style-control-input:checked~.style-control-label::before {color: #fff;border-color: #007bff;  background-color: #007bff;}
+.style-radio .style-control-label::before {border-radius: 50%;}
+.style-radio .style-control-input:checked~.style-control-label::after {border: 4px solid #ccc;  border-radius: 50%;}
+.style-control-label::after {position: absolute;top: .25rem;left: -1.5rem;display: block;width: 1rem;   height: 1rem;content: "";}
+.style-control {position: relative;display: inline-block;min-height: 1.5rem;padding-left: 1.5rem;}
+.style-checkbox .style-control-label::before {border-radius: .25rem;}
+.style-checkbox .style-control-input:checked~.style-control-label::after{border: solid #fff;border-width: 0 2px 2px 0;display: inline-block;padding: 2px 2px 2px 2px;width: 6px;height: 11px;transform: rotate 45deg);margin-left: 4px;}
 .btn-pos{position:absolute;bottom:0;right:0;height:50px;width:100%;text-align:right;}
 .divshadow{width:200px;height:100px;background-image:linear-gradient(90deg, rgba(255, 255, 255, 0), rgba(255, 0, 0, 0.8));position:absolute;bottom:0px;right:0;z-index:1}
-.lin1{
-height:100%;
-width:1px;
-background-image:linear-gradient(rgba(255, 255, 0, 0.5),rgba(255, 255, 255, 0));
-position:absolute;
-z-index:1;
-left:20%;
-}
-.lin2{
-height:100%;
-width:1px;
-background-image:linear-gradient(rgba(255, 0, 0, 0.8),rgba(255, 255, 255, 0));
-position:absolute;
-z-index:1;
-left:40%;}
-.lin3{
-height:100%;
-width:1px;
-background-image:linear-gradient(rgba(255, 0, 0, 0.8),rgba(255, 255, 255, 0));
-position:absolute;
-left:60%;
-z-index:1;
-}
-.lin4{
-height:100%;
-width:1px;
-background-image:linear-gradient(rgba(255, 0, 0, 0.8),rgba(255, 255, 255, 0));
-position:absolute;
-left:80%;
-z-index:1;
-}
-.errortext{
-position:absolute;
-top:70px;
-color:red;
-font-size:11px;
-font-weight:bold;
-display:none;
-}
-.form-group{
-position:relative;
-}
-.showerr{
-display:block;
-}
+.lin1{height:100%;width:1px;background-image:linear-gradient(rgba(255, 255, 0, 0.5),rgba(255, 255, 255, 0));position:absolute;z-index:1;left:20%;}
+.lin2{height:100%;width:1px;background-image:linear-gradient(rgba(255, 0, 0, 0.8),rgba(255, 255, 255, 0));position:absolute;z-index:1;left:40%;}
+.lin3{height:100%;width:1px;background-image:linear-gradient(rgba(255, 0, 0, 0.8),rgba(255, 255, 255, 0));position:absolute;left:60%;z-index:1;}
+.lin4{height:100%;width:1px;background-image:linear-gradient(rgba(255, 0, 0, 0.8),rgba(255, 255, 255, 0));position:absolute;left:80%;z-index:1;}
+.errortext{position:absolute;top:70px;color:red;font-size:11px;font-weight:bold;display:none;}
+.form-group{position:relative;}
+.showerr{display:block;}
 </style>
 </head>
 <body>
@@ -266,7 +99,6 @@ display:block;
 var namev=$('#name');
 var regx=/^[A-Za-z]+$/;
 var regzip=/^[0-9]{6}$/;
-
 var regxe=/^([A-Za-z0-9\._])+\@([A-Za-z0-9\._])+$/;
 var emailv=$('#email');
 var city=$('#inputCity');
@@ -324,26 +156,8 @@ $( "#basicinfo" ).submit(function( event ) {
         var zipl= zip.val();
         var personDetail= {name:name,email:email,cityl:cityl,statel:statel,zipl:zipl}
         localStorage.setItem("formData", JSON.stringify(personDetail));
-
-            alert(personDetail.name);
-        //alert(namev.val() + emailv.val() + city.val() + state.val() + zip.val())
     }
 });
-
-</script>
-
-<script>
-
-var item = [];
-//item.push(nameL,emailL,cityL,stateL,zipL);
-//localStorage.setItem("saveData", JSON.stringify(item));
-
-/* save Data as Object
-var objdata= { "name": nameL, "Email": emailL, "City": cityL }
-localStorage.setItem("saveData", JSON.stringify(objdata));
-
-**/
-
 
 </script>
 </body>
